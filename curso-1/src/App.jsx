@@ -1,19 +1,14 @@
-import Bubble from './components/icons/Bubble.jsx';
+import { Chat } from './components/Chat.jsx';
+import { Notifcation } from './components/Notification/Notifcation.jsx';
 
 export const App = () => {
     return (
-        <>
-            <div className="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-                <div className="flex-shrink-0">
-                    <picture className='w-12 h-12'>
-                        <Bubble />
-                    </picture>
-                </div>
-                <div>
-                    <div className="text-xl font-medium text-black dark:text-white">ChitChat</div>
-                    <p className="text-gray-500 dark:text-gray-400">You have a new message!</p>
-                </div>
-            </div>
-        </>
+        <div className='bg-blue-300 flex justify-center items-center h-screen'>
+            {/* <Chat /> */}
+            {/* <Notifcation /> */}
+            <button className='bg-gradient-to-t from-blue-900 to-blue-400 text-white px-4 py-2 rounded shadow-md focus:ring hover:bg-blue-500 transition-all hover:transform active:translate-y-1' >
+                Este es el mejor botón
+            </button>
+        </div>
     );
 };
