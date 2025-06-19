@@ -1,25 +1,364 @@
 @import "tailwindcss";
 
-@font-face{
-    font-family: 'Inter';
-    src: url('./assets/font/Inter.woff2') format ('wof2');
+/* Importar fuentes */
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/font/Inter.woff2") format("woff2");
     font-style: normal;
     font-weight: 100 700;
     font-display: swap;
 }
 
+/* Tema personalizado de Tailwind */
 @theme {
     --color-primary: #b794d4;
-    --color-primary-light: #EBE2F3;
-    --color-primary-dark: #6A3A92;
+    --color-primary-light: #ebe2f3;
+    --color-primary-dark: #6a3a92;
 
     /* Fuentes */
-    --font-sans: 'Inter', system-ui, sans-serif
+    --font-sans: "Inter", system-ui, sans-serif;
 
     /* Breakpoints */
     --breakpoint-xs: 350px;
+
+    /* Colores de animación */
+    --animation-duration-fast: 0.3s;
+    --animation-duration-normal: 0.6s;
+    --animation-duration-slow: 0.8s;
+
+    /* Timing functions */
+    --ease-out-cubic: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in-out-cubic: cubic-bezier(0.4, 0, 0.6, 1);
 }
 
+/* Animaciones Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Clases de utilidad para animaciones */
+.fade-in {
+    animation: fadeIn var(--animation-duration-slow) var(--ease-out-cubic) forwards;
+}
+
+.fade-out {
+    animation: fadeOut var(--animation-duration-normal) var(--ease-out-cubic) forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp var(--animation-duration-slow) var(--ease-out-cubic) forwards;
+}
+
+.fade-in-scale {
+    animation: fadeInScale var(--animation-duration-normal) var(--ease-out-cubic) forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft var(--animation-duration-slow) var(--ease-out-cubic) forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight var(--animation-duration-slow) var(--ease-out-cubic) forwards;
+}
+
+.slide-in-bottom {
+    animation: slideInFromBottom var(--animation-duration-slow) var(--ease-out-cubic) forwards;
+}
+
+.bounce-in {
+    animation: bounceIn var(--animation-duration-slow) var(--ease-out-cubic) forwards;
+}
+
+.animate-pulse-custom {
+    animation: pulse 2s var(--ease-in-out-cubic) infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.gradient-animate {
+    background-size: 400% 400%;
+    animation: gradientShift 6s ease infinite;
+}
+
+/* Estado inicial para elementos que se animarán */
+.animate-on-load {
+    opacity: 0;
+}
+
+/* Delays para animaciones escalonadas */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+.delay-200 {
+    animation-delay: 0.2s;
+}
+.delay-300 {
+    animation-delay: 0.3s;
+}
+.delay-400 {
+    animation-delay: 0.4s;
+}
+.delay-500 {
+    animation-delay: 0.5s;
+}
+.delay-600 {
+    animation-delay: 0.6s;
+}
+.delay-700 {
+    animation-delay: 0.7s;
+}
+.delay-800 {
+    animation-delay: 0.8s;
+}
+.delay-1000 {
+    animation-delay: 1s;
+}
+.delay-1200 {
+    animation-delay: 1.2s;
+}
+.delay-1400 {
+    animation-delay: 1.4s;
+}
+.delay-1600 {
+    animation-delay: 1.6s;
+}
+.delay-1800 {
+    animation-delay: 1.8s;
+}
+.delay-2000 {
+    animation-delay: 2s;
+}
+
+/* Componente de botón social */
 .social-button {
-    @apply p-2 size-10 xs:size-12 flex items-center justify-center rounded-full hover:scale-110 transition-transform;
+    @apply p-2 size-10 xs:size-12 flex items-center justify-center rounded-full;
+    transition: all var(--animation-duration-fast) var(--ease-out-cubic);
+    backface-visibility: hidden;
+    transform-origin: center;
+}
+
+.social-button:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-button:active {
+    transform: scale(0.95) translateY(0);
+    transition-duration: 0.1s;
+}
+
+/* Componente de tarjeta de curso */
+.course-card {
+    transition: all var(--animation-duration-fast) var(--ease-out-cubic);
+    backface-visibility: hidden;
+    transform-origin: center;
+}
+
+.course-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.course-card:hover .course-icon {
+    transform: rotate(-15deg) scale(1.1);
+    transition: transform var(--animation-duration-fast) var(--ease-out-cubic);
+}
+
+.course-card:hover .course-title {
+    transform: translateY(-4px);
+    transition: transform var(--animation-duration-fast) var(--ease-out-cubic);
+}
+
+/* Utilidades de máscara */
+.mask-radial-at-center {
+    mask: radial-gradient(circle at center, black 45%, transparent 80%);
+    -webkit-mask: radial-gradient(circle at center, black 45%, transparent 80%);
+}
+
+.mask-radial-from-45 {
+    mask: radial-gradient(circle, black 45%, transparent 80%);
+    -webkit-mask: radial-gradient(circle, black 45%, transparent 80%);
+}
+
+/* Estados de hover mejorados */
+.hover-lift {
+    transition: transform var(--animation-duration-fast) var(--ease-out-cubic);
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+.hover-glow {
+    transition: all var(--animation-duration-fast) var(--ease-out-cubic);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(var(--color-primary), 0.5);
+}
+
+/* Animaciones responsivas */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .fade-out,
+    .fade-in-up,
+    .fade-in-scale,
+    .fade-in-left,
+    .fade-in-right,
+    .slide-in-bottom,
+    .bounce-in,
+    .animate-pulse-custom,
+    .animate-float,
+    .gradient-animate {
+        animation: none;
+    }
+
+    .animate-on-load {
+        opacity: 1;
+    }
+
+    .social-button,
+    .course-card {
+        transition: none;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-contrast: high) {
+    .social-button {
+        border: 2px solid currentColor;
+    }
+
+    .course-card {
+        border-width: 2px;
+    }
+}
+
+/* Breakpoint personalizado xs */
+@media (min-width: 350px) {
+    .xs\:size-12 {
+        width: 3rem;
+        height: 3rem;
+    }
 }
