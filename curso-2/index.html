@@ -40,17 +40,13 @@
             >
                 <a class="bg-purple-100 social-button" href="#" target="_blank">
                     <svg width="28" height="28" fill="purple">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <use xlink:href="./sprite.svg#twitch" />
                     </svg>
                 </a>
 
                 <a class="bg-red-100 social-button" href="#" target="_blank">
                     <svg width="28" height="28" fill="red">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <use xlink:href="./sprite.svg#youtube" />
                     </svg>
                 </a>
 
@@ -60,33 +56,25 @@
                     target="_blank"
                 >
                     <svg width="28" height="28" fill="white">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <use xlink:href="./sprite.svg#instagram" />
                     </svg>
                 </a>
 
                 <a class="bg-blue-100 social-button" href="#" target="_blank">
                     <svg width="28" height="28" fill="blue">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <use xlink:href="./sprite.svg#linkedin" />
                     </svg>
                 </a>
 
                 <a class="bg-zinc-900 social-button" href="#" target="_blank">
                     <svg width="28" height="28" fill="white">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <use xlink:href="./sprite.svg#github" />
                     </svg>
                 </a>
 
                 <a class="bg-black social-button" href="#" target="_blank">
                     <svg width="28" height="28" fill="white">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                        />
+                        <use xlink:href="./sprite.svg#x" />
                     </svg>
                 </a>
             </section>
@@ -102,7 +90,7 @@
             <div class="grid grid-cols-3 grid-rows-2 gap-2 w-full">
                 <a
                     href="#"
-                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500 border border-cyan-900 flex flex-col items-start col-span-2 p-7 min-h-[180px] animate-on-load fade-in-left"
+                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500 border border-cyan-900 flex flex-col items-start col-span-2 p-7 min-h-[180px] animate-on-load fade-in-left group"
                     style="animation-delay: 1.4s"
                 >
                     <span
@@ -110,11 +98,13 @@
                         >React JS</span
                     >
 
-                    <div
-                        class="course-icon absolute -right-4 -bottom-4 -rotate-6 w-28 h-28 transition-transform duration-300 bg-blue-400 rounded-full flex items-center justify-center text-4xl font-bold"
+                    <svg
+                        width="100"
+                        height="100"
+                        class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform"
                     >
-                        ⚛️
-                    </div>
+                        <use xlink:href="./sprite.svg#react" />
+                    </svg>
                     <span class="absolute top-2 left-2 text-xs border rounded-xl px-1 py-0.5">
                         Curso de +14 clases
                     </span>
@@ -122,7 +112,7 @@
 
                 <a
                     href="#"
-                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-600 via-yellow-400 to-white border border-orange-600 flex flex-col items-start col-span-1 p-7 min-h-[180px] animate-on-load fade-in-right"
+                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-600 via-yellow-400 to-white border border-orange-600 flex flex-col items-start col-span-1 p-7 min-h-[180px] animate-on-load fade-in-right group"
                     style="animation-delay: 1.6s"
                 >
                     <span
@@ -130,11 +120,13 @@
                         >HTML</span
                     >
 
-                    <div
-                        class="course-icon absolute -right-4 -bottom-4 -rotate-6 w-28 h-28 transition-transform duration-300 bg-orange-500 rounded-full flex items-center justify-center text-4xl font-bold"
+                    <svg
+                        width="100"
+                        height="100"
+                        class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform"
                     >
-                        🌐
-                    </div>
+                        <use xlink:href="./sprite.svg#html" />
+                    </svg>
                     <span
                         class="absolute top-2 left-2 text-xs border rounded-xl px-1 py-0.5 text-gray-800"
                     >
@@ -144,7 +136,7 @@
 
                 <a
                     href="#"
-                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#663399] via-[#8e44ad] to-white border border-[#663399] flex flex-col items-start col-span-1 p-7 min-h-[180px] animate-on-load fade-in-left"
+                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#663399] via-[#8e44ad] to-white border border-[#663399] flex flex-col items-start col-span-1 p-7 min-h-[180px] animate-on-load fade-in-left group"
                     style="animation-delay: 1.8s"
                 >
                     <span
@@ -152,11 +144,13 @@
                         >CSS</span
                     >
 
-                    <div
-                        class="course-icon absolute -right-4 -bottom-4 -rotate-6 w-28 h-28 transition-transform duration-300 bg-purple-500 rounded-full flex items-center justify-center text-4xl font-bold"
+                    <svg
+                        width="100"
+                        height="100"
+                        class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform"
                     >
-                        🎨
-                    </div>
+                        <use xlink:href="./sprite.svg#css" />
+                    </svg>
                     <span class="absolute top-2 left-2 text-xs border rounded-xl px-1 py-0.5">
                         Curso de +14 clases
                     </span>
@@ -164,7 +158,7 @@
 
                 <a
                     href="#"
-                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#215732] via-[#3C873A] to-[#8CC84B] border border-[#215732] flex flex-col items-start col-span-2 p-7 min-h-[180px] animate-on-load fade-in-right"
+                    class="course-card relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#215732] via-[#3C873A] to-[#8CC84B] border border-[#215732] flex flex-col items-start col-span-2 p-7 min-h-[180px] animate-on-load fade-in-right group"
                     style="animation-delay: 2s"
                 >
                     <span
@@ -172,11 +166,13 @@
                         >Node JS</span
                     >
 
-                    <div
-                        class="course-icon absolute -right-4 -bottom-4 -rotate-6 w-28 h-28 transition-transform duration-300 bg-green-500 rounded-full flex items-center justify-center text-4xl font-bold"
+                    <svg
+                        width="100"
+                        height="100"
+                        class="absolute -right-4 -bottom-4 -rotate-6 size-28 group-hover:-rotate-12 group-hover:scale-125 transition-transform"
                     >
-                        📦
-                    </div>
+                        <use xlink:href="./sprite.svg#node" />
+                    </svg>
                     <span class="absolute top-2 left-2 text-xs border rounded-xl px-1 py-0.5">
                         Curso de +14 clases
                     </span>
