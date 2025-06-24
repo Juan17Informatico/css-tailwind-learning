@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Links a Proyectos</title>
-</head>
-<body>
-    <h1>Esta página es un Link a los proyectos desarrollados en cada curso</h1>
-</body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mis Proyectos de Cursos</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style>
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+            
+            .animate-fade-in-up {
+                animation: fadeInUp 0.6s ease-out forwards;
+            }
+            
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+            
+            .project-card {
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                transition: all 0.3s ease;
+            }
+            
+            .project-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+                border-color: rgba(99, 102, 241, 0.3);
+            }
+            
+            body {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+            }
+            
+            .title-glow {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            }
+        </style>
+    </head>
+    <body class="text-white">
+        <!-- Fondo con partículas flotantes -->
+        <div class="fixed inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full animate-float"></div>
+            <div class="absolute top-3/4 right-1/4 w-32 h-32 bg-indigo-300/10 rounded-full animate-float" style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-3/4 w-48 h-48 bg-purple-300/5 rounded-full animate-float" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="relative z-10 min-h-screen px-4 py-12">
+            <!-- Header -->
+            <header class="text-center mb-16 animate-fade-in-up">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4 title-glow">
+                    Mis Proyectos
+                </h1>
+                <p class="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+                    Una colección de proyectos desarrollados durante mis cursos de programación
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-400 to-purple-400 mx-auto mt-8 rounded-full"></div>
+            </header>
+
+            <!-- Contenedor principal -->
+            <main class="max-w-6xl mx-auto">
+                <!-- Grid de proyectos -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Ejemplo de tarjeta de proyecto -->
+                    <div class="project-card rounded-2xl p-8 animate-fade-in-up">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3">Curso de Ejemplo</h3>
+                            <p class="text-white/70 mb-6 leading-relaxed">
+                                Descripción del curso y los proyectos desarrollados durante el aprendizaje.
+                            </p>
+                            <a href="#" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                                Ver Proyectos
+                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta para agregar nuevos proyectos -->
+                    <div class="project-card rounded-2xl p-8 border-2 border-dashed border-white/30 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white/10 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-8 h-8 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-white/60">Próximo Curso</h3>
+                            <p class="text-white/50 mb-6 leading-relaxed">
+                                Aquí aparecerá tu siguiente proyecto cuando completes un nuevo curso.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estadísticas -->
+                <div class="mt-20 text-center animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 max-w-2xl mx-auto border border-white/10">
+                        <h2 class="text-3xl font-bold mb-6">Mi Progreso</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-indigo-400 mb-2" id="courses-count">1</div>
+                                <div class="text-white/70">Cursos Completados</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-purple-400 mb-2" id="projects-count">0</div>
+                                <div class="text-white/70">Proyectos Desarrollados</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-pink-400 mb-2" id="hours-count">0</div>
+                                <div class="text-white/70">Horas de Código</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="text-center mt-20 text-white/60 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <p>&copy; 2025 Mi Portafolio de Proyectos en la ruta de cursos con CSS y TailwindCSS. Construyendo el futuro, un curso a la vez.</p>
+            </footer>
+        </div>
+
+        <script>
+            // Animaciones de entrada escalonadas
+            document.addEventListener('DOMContentLoaded', function() {
+                const cards = document.querySelectorAll('.project-card');
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.2}s`;
+                });
+
+                // Efecto de hover mejorado para las tarjetas
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.transform = 'translateY(-8px) scale(1.02)';
+                    });
+                    
+                    card.addEventListener('mouseleave', function() {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+
+                // Animación de contadores
+                animateCounters();
+            });
+
+            function animateCounters() {
+                const counters = [
+                    { element: document.getElementById('courses-count'), target: 1 },
+                    { element: document.getElementById('projects-count'), target: 1 },
+                    { element: document.getElementById('hours-count'), target: 3 }
+                ];
+
+                counters.forEach(counter => {
+                    let current = 0;
+                    const increment = counter.target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= counter.target) {
+                            counter.element.textContent = counter.target;
+                            clearInterval(timer);
+                        } else {
+                            counter.element.textContent = Math.floor(current);
+                        }
+                    }, 50);
+                });
+            }
+        </script>
+    </body>
 </html>
